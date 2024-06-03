@@ -8,19 +8,53 @@
   <div class="card-body">
     <form #docenteForm="">
       <div class="form-group row mb-3">
-        <label for="abc" class="col-form-label col-sm-2">abc:</label>
-
+        <label for="nombres" class="col-form-label col-sm-2">Nombres:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="nombres" [(ngModel)]="docente.nombres" required minlength="4" placeholder="Nombres..." #nombres="ngModel">
+        </div>
       </div>
       <div class="form-group row mb-3">
-        <label for="cde" class="col-form-label col-sm-2">cde:</label>
-
+        <label for="apellidos" class="col-form-label col-sm-2">Apellidos:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="apellidos" [(ngModel)]="docente.apellidos" required minlength="4" placeholder="Apellidos..." #apellidos="ngModel">
+        </div>
       </div>
       <div class="form-group row">
-        <label for="dsd" class="col-form-label col-sm-2">dsd:</label>
-
+        <label for="tipoIdentificacion" class="col-form-label col-sm-2">Tipo ID:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="tipoIdentificacion" [(ngModel)]="docente.tipoIdentificacion" required minlength="4" placeholder="Tipo de identificación..." #tipoIdentificacion="ngModel">
+        </div>
       </div>
-
-
+      <div class="form-group row">
+        <label for="numeroIdentificacion" class="col-form-label col-sm-2">Num identificación:</label>
+        <div class="col-sm-6">
+          <input type="number" class="form-control" name="numeroIdentificacion" [(ngModel)]="docente.numeroIdentificacion" required minlength="4" placeholder="Numero de identificación..." #numeroIdentificacion="ngModel">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="correo" class="col-form-label col-sm-2">Correo:</label>
+        <div class="col-sm-6">
+          <input type="string" class="form-control" name="correo" [(ngModel)]="docente.correo" required minlength="4" placeholder="Correo..." #correo="ngModel">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="tipoTelefono" class="col-form-label col-sm-2">Tipo telefono:</label>
+        <div class="col-sm-6">
+          <input type="string" class="form-control" name="tipoTelefono" [(ngModel)]="docente.objTelefonoEntity.tipoTelefono" required minlength="4" placeholder="Tipo de teléfono..." #tipoTelefono="ngModel">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="numero" class="col-form-label col-sm-2">Numero telefono:</label>
+        <div class="col-sm-6">
+          <input type="number" class="form-control" name="numero" [(ngModel)]="docente.objTelefonoEntity.numero" required minlength="4" placeholder="Numero de telefono..." #numero="ngModel">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="vinculacion" class="col-form-label col-sm-2">Vinculacion:</label>
+        <div class="col-sm-6">
+          <input type="string" class="form-control" name="vinculacion" [(ngModel)]="docente.vinculacion" required minlength="4" placeholder="Vinculacion..." #vinculacion="ngModel">
+        </div>
+      </div>
 
       <div class="form-group row mt-4">
         <div class="col-sm-6">
