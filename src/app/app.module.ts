@@ -8,13 +8,17 @@ import { FormComponent } from './components/docentes/form.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DocentesComponent } from './components/docentes/docentes.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FooterComponent } from './components/footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     NavigationComponent,
-    DocentesComponent
+    DocentesComponent,
+    FooterComponent,
+    HeaderComponent
   ],
   imports: [
     BrowserModule,
