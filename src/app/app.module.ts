@@ -8,13 +8,16 @@ import { FormComponent } from './components/docentes/form.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DocentesComponent } from './components/docentes/docentes.component';
 import { HttpClientModule } from '@angular/common/http';
-
+import { CuestionariosComponent } from './components/cuestionarios/cuestionarios.component';
+import { FormCuestionariosComponent } from './components/cuestionarios/form-cuestionarios.component';
 @NgModule({
   declarations: [
     AppComponent,
     FormComponent,
     NavigationComponent,
-    DocentesComponent
+    DocentesComponent,
+    CuestionariosComponent,
+    FormCuestionariosComponent
   ],
   imports: [
     BrowserModule,
