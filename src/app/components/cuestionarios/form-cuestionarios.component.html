@@ -1,0 +1,33 @@
+<ul class="alert alert-danger" *ngIf="errores.length > 0">
+  <li *ngFor="let err of errores">
+    {{ err }}
+  </li>
+</ul>
+<div class="card bg-secondary text-white mt-5">
+  <div class="card-header">{{ titulo }}</div>
+  <div class="card-body">
+    <form #clienteForm="ngForm">
+      <div class="form-group row mb-3">
+        <label for="titulo" class="col-form-label col-sm-2">Titulo:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="titulo" [(ngModel)]="cuestionario.titulo" required minlength="4" placeholder="Titulo del cuestionario..." #titulo="ngModel">
+        </div>
+      </div>
+      <div class="form-group row mb-3">
+        <label for="descripcion" class="col-form-label col-sm-2">Descripcion:</label>
+        <div class="col-sm-6">
+          <input type="text" class="form-control" name="descripcion" [(ngModel)]="cuestionario.descripcion" placeholder="Descripcion del titulo..." required minlength="4" #descripcion="ngModel">
+        </div>
+      </div>
+
+
+
+
+      <div class="form-group row mt-4">
+        <div class="col-sm-6">
+          <button class="btn btn-success" role="button" (click)='crearCuestionario()' >Crear</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

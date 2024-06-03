@@ -1,0 +1,39 @@
+<div class="card text-white bg-secondary mb-3 mt-4" style="max-width: 500rem;">
+  <div class="card-header">Cuestionatios</div>
+  <div class="card-body">
+      <h5 class="card-title">Listado de Cuestionatios</h5>
+
+      <div *ngIf="cuestionarios.length==0" class="alert alert-info">
+          No se encuentran registros en la base de datos
+      </div>
+      <div class="table">
+          <table class="table table-bordered table-striped" style="max-width: 100%;" *ngIf="cuestionarios.length > 0">
+            <thead>
+              <tr>
+                <th>Título</th>
+                <th>Descripción</th>
+                <th>Preguntas</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let cuestionario of cuestionarios">
+                <td>{{ cuestionario.titulo }}</td>
+                <td>{{ cuestionario.descripcion }}</td>
+                <td>
+                  <ul>
+                    <li *ngFor="let pregunta of cuestionario.preguntasEntities">
+                      {{ pregunta.enunciado }} ({{ pregunta.objTipoPreguntaEntity.nombre }})
+                    </li>
+                  </ul>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <div class="my-2 text-left">
+        <button class="btn btn-rounded btn-primary" type="button" (click)='crearCuestionario()'>
+          Crear
+        </button>
+      </div>
+  </div>
+</div>

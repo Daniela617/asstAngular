@@ -8,9 +8,8 @@ import { FormComponent } from './components/docentes/form.component';
 import { NavigationComponent } from './components/navigation/navigation.component';
 import { DocentesComponent } from './components/docentes/docentes.component';
 import { HttpClientModule } from '@angular/common/http';
-import { FooterComponent } from './components/footer/footer.component';
-import { HeaderComponent } from './components/header/header.component';
-
+import { CuestionariosComponent } from './components/cuestionarios/cuestionarios.component';
+import { FormCuestionariosComponent } from './components/cuestionarios/form-cuestionarios.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,6 +18,8 @@ import { HeaderComponent } from './components/header/header.component';
     DocentesComponent,
     FooterComponent,
     HeaderComponent
+    CuestionariosComponent,
+    FormCuestionariosComponent
   ],
   imports: [
     BrowserModule,
