@@ -20,7 +20,7 @@ export class DocenteService{
             return throwError(e);
           }
           console.log(e.error.mensaje);
-          Swal.fire('Error al crear el cliente', e.error.mensaje, 'error');
+          Swal.fire('Error al crear el docente', e.error.mensaje, 'error');
           return throwError(e);
       })
       );

@@ -16,11 +16,11 @@ export class FormComponent implements OnInit {
   public errores: string[] = [];
   ngOnInit(): void {
   }
-  public crearCliente():void{
+  public crearDocente():void{
     this.objService.crearDocente(this.docente).subscribe(
       response =>{
         //this.router.navigate(['/']);
-        Swal.fire('Nuevo cliente', `Cliente  creado con éxito!`, 'success');
+        Swal.fire('Nuevo docente', `Docente  creado con éxito!`, 'success');
       },
       err => {
         this.errores = err.error.errors as string[];
