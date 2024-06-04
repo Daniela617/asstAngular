@@ -6,7 +6,7 @@ import { CuestionariosComponent } from './components/cuestionarios/cuestionarios
 import { DocentesComponent } from './components/docentes/docentes.component';
 
 const routes: Routes = [
-  {path: 'docentes/form', component: FormComponent},
+  {path: 'docente/form', component: FormComponent},
   {path: 'docentes', component: DocentesComponent},
   {path: 'cuestionario/form', component: FormCuestionariosComponent},
   {path: 'cuestionarios', component: CuestionariosComponent}

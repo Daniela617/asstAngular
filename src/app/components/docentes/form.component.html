@@ -5,7 +5,7 @@
         <div class="form-group row mb-3">
           <label for="nombre" class="col-form-label col-sm-2" required>Nombre <span class="text-danger">*</span></label>
             <div class="col-sm-6">
-              <input type="text" class="form-control" name="nombre" [(ngModel)]="docente.nombres" placeholder="Ingrese su nombre" 
+              <input type="text" class="form-control" name="nombre" [(ngModel)]="docente.nombres" placeholder="Ingrese su nombre"
                 required minlength="4" #nombre = 'ngModel'>
                 <div *ngIf="nombre.invalid && (nombre.dirty || nombre.touched)" style="color: rgb(194, 94, 94);">
                     <div *ngIf="nombre.errors?.['required']">El nombre es requerido</div>
@@ -16,7 +16,7 @@
           <div class="form-group row mb-3">
             <label for="apellidos" class="col-form-label col-sm-2" required>Apellidos <span class="text-danger">*</span></label>
               <div class="col-sm-6">
-                <input type="text" class="form-control" name="apellidos" [(ngModel)]="docente.apellidos" placeholder="Ingrese sus apellidos" 
+                <input type="text" class="form-control" name="apellidos" [(ngModel)]="docente.apellidos" placeholder="Ingrese sus apellidos"
                   required minlength="4" #apellidos = 'ngModel'>
                   <div *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)" style="color: rgb(194, 94, 94);">
                       <div *ngIf="apellidos.errors?.['required']">Los apellidos son requeridos</div>
@@ -27,7 +27,7 @@
           <div class="form-group row mb-3">
             <label for="tipoIdent" class="col-form-label col-sm-2" required>Tipo de identificación <span class="text-danger">*</span></label>
               <div class="col-sm-6">
-                <input type="text" class="form-control" name="tipoIdent" [(ngModel)]="docente.tipoIdentificacion" placeholder="Ingrese el tipo de identifiación" 
+                <input type="text" class="form-control" name="tipoIdent" [(ngModel)]="docente.tipoIdentificacion" placeholder="Ingrese el tipo de identifiación"
                   required #tipoIdent = 'ngModel'>
                   <div *ngIf="tipoIdent.invalid && (tipoIdent.dirty || tipoIdent.touched)" style="color: rgb(194, 94, 94);">
                       <div *ngIf="tipoIdent.errors?.['required']">El tipo de identificación es requerido</div>
@@ -37,7 +37,7 @@
             <div class="form-group row mb-3">
               <label for="numeroIdent" class="col-form-label col-sm-2" required>Número de identificación <span class="text-danger">*</span></label>
                 <div class="col-sm-6">
-                  <input type="number" class="form-control" name="numeroIdent" [(ngModel)]="docente.numeroIdentificacion" placeholder="Ingrese el número de identifiación" 
+                  <input type="number" class="form-control" name="numeroIdent" [(ngModel)]="docente.numeroIdentificacion" placeholder="Ingrese el número de identifiación"
                     required #numeroIdent = 'ngModel'>
                     <div *ngIf="numeroIdent.invalid && (numeroIdent.dirty || numeroIdent.touched)" style="color: rgb(194, 94, 94);">
                         <div *ngIf="numeroIdent.errors?.['required']">El número de identificación es requerido</div>
@@ -58,7 +58,7 @@
             <div class="form-group row mb-3">
               <label for="tipoTel" class="col-form-label col-sm-2" required>Tipo de telefono <span class="text-danger">*</span></label>
                 <div class="col-sm-6">
-                  <input type="text" class="form-control" name="tipoTel" [(ngModel)]="telefono.tipoTelefono" placeholder="Ingrese el tipo de teléfono" 
+                  <input type="text" class="form-control" name="tipoTel" [(ngModel)]="telefono.tipoTelefono" placeholder="Ingrese el tipo de teléfono"
                     required #tipoTel = 'ngModel'>
                     <div *ngIf="tipoTel.invalid && (tipoTel.dirty || tipoTel.touched)" style="color: rgb(194, 94, 94);">
                         <div *ngIf="tipoTel.errors?.['required']">El tipo de identificación es requerido</div>
@@ -68,21 +68,21 @@
             <div class="form-group row mb-3">
               <label for="numTel" class="col-form-label col-sm-2" required>Número de teléfono <span class="text-danger">*</span></label>
               <div class="col-sm-6">
-                <input type="text" class="form-control" name="numTel" [(ngModel)]="telefono.numero" placeholder="Ingrese el número de teléfono" 
+                <input type="text" class="form-control" name="numTel" [(ngModel)]="telefono.numero" placeholder="Ingrese el número de teléfono"
                   required  #numTel = 'ngModel'>
                 <div *ngIf="numTel.invalid && (numTel.dirty || numTel.touched)" style="color: rgb(194, 94, 94);">
                   <div *ngIf="numTel.errors?.['required']">El tipo de teléfono es requerido</div>
                 </div>
               </div>
             </div>
-          
+
       </form>
       <div class="form-group row mt-4">
           <div class="col-sm-6">
-           
-              <button class="btn btn-success" role="button"  [disabled]="!docenteForm.form.valid">Crear</button>
+
+              <button class="btn btn-success" role="button" (click)='crearDocente()' [disabled]="!docenteForm.form.valid">Crear</button>
           </div>
-          
+
       </div>
   </div>
 </div>
