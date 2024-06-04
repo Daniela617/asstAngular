@@ -10,5 +10,5 @@ export class Docente
   correo!: string;
   vinculacion!: string;
   objTelefonoEntity!: Telefono;
-  listaDepartamentos!: Departamento;
+  listaDepartamentos!: Departamento[];
 }

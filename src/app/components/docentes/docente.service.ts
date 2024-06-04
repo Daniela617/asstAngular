@@ -4,6 +4,7 @@ import { of } from 'rxjs';
 import { Docente } from '../../models/docentes';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import Swal from 'sweetalert2';
+import { Departamento } from 'src/app/models/departamento';
 
 @Injectable()
 export class DocenteService{
@@ -12,6 +13,9 @@ export class DocenteService{
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   constructor(private http:HttpClient) { }
 
+  getDepartamentos(): Observable<Departamento[]>{
+    return this.http.get<Departamento[]>(`${this.urlEndPointGet}/deptos`);
+  }
   getDocentes(): Observable<Docente[]>{
     return this.http.get<Docente[]>(this.urlEndPointGet);
   }
