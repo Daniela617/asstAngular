@@ -12,7 +12,7 @@ import { Cuestionario } from 'src/app/models/cuestionario';
 export class FormCuestionariosComponent {
   constructor(private objService:CuestionarioService,private router:Router){}
   public cuestionario: Cuestionario = new Cuestionario();
-  public titulo: string = 'Crear cuestionario';
+  public titulC: string = 'Crear cuestionario';
   public errores: string[] = [];
   ngOnInit(): void {
   }
@@ -29,6 +29,9 @@ export class FormCuestionariosComponent {
         console.error(err.error.errors);
       }
     )
+  }
+  irAtras(){
+    this.router.navigate(['/cuestionarios']);
   }
 
 

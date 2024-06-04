@@ -9,6 +9,7 @@ import { CuestionarioService } from './cuestionario.service';
 })
 export class CuestionariosComponent implements OnInit{
   public cuestionarios: Cuestionario[] = [];
+  public titulo: string = 'Administrar cuestionarios';
   constructor(private objCuestionarioService:CuestionarioService,private router:Router) { }
   ngOnInit(): void {
     this.getCuestionarios();

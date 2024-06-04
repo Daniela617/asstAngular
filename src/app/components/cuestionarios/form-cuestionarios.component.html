@@ -1,33 +1,36 @@
-<ul class="alert alert-danger" *ngIf="errores.length > 0">
-  <li *ngFor="let err of errores">
-    {{ err }}
-  </li>
-</ul>
-<div class="card bg-secondary text-white mt-5">
-  <div class="card-header">{{ titulo }}</div>
-  <div class="card-body">
-    <form #clienteForm="ngForm">
-      <div class="form-group row mb-3">
-        <label for="titulo" class="col-form-label col-sm-2">Titulo:</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" name="titulo" [(ngModel)]="cuestionario.titulo" required minlength="4" placeholder="Titulo del cuestionario..." #titulo="ngModel">
-        </div>
-      </div>
-      <div class="form-group row mb-3">
-        <label for="descripcion" class="col-form-label col-sm-2">Descripcion:</label>
-        <div class="col-sm-6">
-          <input type="text" class="form-control" name="descripcion" [(ngModel)]="cuestionario.descripcion" placeholder="Descripcion del titulo..." required minlength="4" #descripcion="ngModel">
-        </div>
-      </div>
-
-<!---->
-
-
+<div class="custom-title mt-4"><h1>{{titulC}}</h1></div>
+<div class="card text-white mt-5 custom-card">
+      <div class="card-body">
+      <form #cuestionarioForm = "ngForm">
+        <div class="form-group row mb-3">
+          <label for="titulo" class="col-form-label col-sm-2" required>Título <span class="text-danger">*</span></label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="nombre" [(ngModel)]="cuestionario.titulo" placeholder="Ingrese el título"
+                required minlength="3" #titulo = 'ngModel'>
+                <div *ngIf="titulo.invalid && (titulo.dirty || titulo.touched)" style="color: rgb(194, 94, 94);">
+                    <div *ngIf="titulo.errors?.['required']">El título es requerido</div>
+                    <div *ngIf="titulo.errors?.['minlength']">El título debe tener al menos 3 caracteres</div>
+                  </div>
+            </div>
+          </div>
+          <div class="form-group row mb-3">
+            <label for="apellidos" class="col-form-label col-sm-2" required>Descripción <span class="text-danger">*</span></label>
+              <div class="col-sm-6">
+                <input type="text" class="form-control" name="apellidos" [(ngModel)]="cuestionario.descripcion" placeholder="Ingrese la descripción"
+                  required minlength="4" #apellidos = 'ngModel'>
+                  <div *ngIf="apellidos.invalid && (apellidos.dirty || apellidos.touched)" style="color: rgb(194, 94, 94);">
+                      <div *ngIf="apellidos.errors?.['required']">La descripción es requeridos</div>
+                      <div *ngIf="apellidos.errors?.['minlength']">La descripción debe tener al menos 4 caracteres</div>
+                    </div>
+              </div>
+          </div>
+      </form>
       <div class="form-group row mt-4">
-        <div class="col-sm-6">
-          <button class="btn btn-success" role="button" (click)='crearCuestionario()' >Crear</button>
-        </div>
+          <div class="col-sm-6">
+              <button class="btn btn-secondary custom-margin" role="button" (click)='irAtras()'>Atrás</button>
+              <button class="btn btn-success" role="button"  [disabled]="!cuestionarioForm.form.valid">Crear</button>
+          </div>
+
       </div>
-    </form>
   </div>
 </div>
