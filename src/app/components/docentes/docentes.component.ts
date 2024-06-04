@@ -10,7 +10,14 @@ import { Router } from '@angular/router';
 })
 export class DocentesComponent implements OnInit{
   constructor(private objDocenteService:DocenteService,private router:Router) { }
+  public docentes: Docente[] = [];
   ngOnInit(): void {
+    this.getDocentes();
+  }
+  getDocentes(){
+    this.objDocenteService.getDocentes().subscribe(
+      docentes => this.docentes = docentes
+    );
   }
   crearDocente(){
     this.router.navigate(['docente/form']);

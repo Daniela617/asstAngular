@@ -8,6 +8,7 @@ import { Cuestionario } from 'src/app/models/cuestionario';
 @Injectable()
 export class CuestionarioService{
   private urlEndPoint: string = 'http://localhost:5000/api/cuestionarios';
+  private urlEndPointC: string = 'http://localhost:5000/api/cuestionario';
   private httpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   constructor(private http:HttpClient) { }
 
@@ -16,7 +17,7 @@ export class CuestionarioService{
   }
 
   crearCuestionario(cuestionario: Cuestionario): Observable<Cuestionario>{
-    return this.http.post<Cuestionario>(this.urlEndPoint, cuestionario, {headers: this.httpHeaders}).pipe(
+    return this.http.post<Cuestionario>(this.urlEndPointC, cuestionario, {headers: this.httpHeaders}).pipe(
       catchError(
         e => {
 
