@@ -21,7 +21,7 @@
                 <td>{{ cuestionario.descripcion }}</td>
                 <td>
                   <ul>
-                    <li *ngFor="let pregunta of cuestionario.preguntasEntities">
+                    <li *ngFor="let pregunta of cuestionario.preguntaEntities">
                       {{ pregunta.enunciado }} ({{ pregunta.objTipoPreguntaEntity.nombre }})
                     </li>
                   </ul>

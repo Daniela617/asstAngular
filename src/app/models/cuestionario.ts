@@ -2,6 +2,6 @@ import { Pregunta } from "./pregunta";
 
 export class Cuestionario{
   descripcion!: string;
-  preguntasEntities!: Pregunta[];
+  preguntaEntities!: Pregunta[];
   titulo!: string;
 }
