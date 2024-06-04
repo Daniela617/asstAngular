@@ -5,7 +5,7 @@ import { Docente } from '../../models/docentes';
 import { HttpClient,HttpHeaders } from '@angular/common/http';
 import Swal from 'sweetalert2';
 import { Departamento } from 'src/app/models/departamento';
-
+import { HttpErrorResponse } from '@angular/common/http';
 @Injectable()
 export class DocenteService{
   private urlEndPoint: string = 'http://localhost:5000/api/docente';
@@ -19,7 +19,14 @@ export class DocenteService{
   getDocentes(): Observable<Docente[]>{
     return this.http.get<Docente[]>(this.urlEndPointGet);
   }
-
+  handleError(error: HttpErrorResponse) {
+    if (error.status === 400) {
+      console.error('Error:', error.error.mensaje);
+    } else {
+      // Handle other types of errors (e.g., generic error message)
+      console.error('Unhandled error:', error);
+    }
+  }
   crearDocente(docente: Docente): Observable<Docente>{
     return this.http.post<Docente>(this.urlEndPoint, docente, {headers: this.httpHeaders}).pipe(
       catchError(

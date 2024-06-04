@@ -1,4 +1,9 @@
 <div class="custom-title mt-4"><h1>{{titulo}}</h1></div>
+<ul class="alert alert-danger" *ngIf="errores.length > 0">
+  <li *ngFor="let err of errores">
+    {{ err }}
+  </li>
+</ul>
 <div class="card text-white mt-5 custom-card">
       <div class="card-body">
       <form #docenteForm = "ngForm">
@@ -48,7 +53,7 @@
             <div class="form-group row mb-3">
               <label for="numeroIdent" class="col-form-label col-sm-2" required>Número de identificación <span class="text-danger">*</span></label>
                 <div class="col-sm-6">
-                  <input type="number" class="form-control" name="numeroIdent" [(ngModel)]="docente.numeroIdentificacion" placeholder="Ingrese el número de identifiación"
+                  <input type="string" class="form-control" name="numeroIdent" [(ngModel)]="docente.numeroIdentificacion" placeholder="Ingrese el número de identifiación"
                     required #numeroIdent = 'ngModel'>
                     <div *ngIf="numeroIdent.invalid && (numeroIdent.dirty || numeroIdent.touched)" style="color: rgb(194, 94, 94);">
                         <div *ngIf="numeroIdent.errors?.['required']">El número de identificación es requerido</div>
@@ -72,7 +77,7 @@
                   <input type="text" class="form-control" name="tipoTel" [(ngModel)]="telefono.tipoTelefono" placeholder="Ingrese el tipo de teléfono"
                     required #tipoTel = 'ngModel'>
                     <div *ngIf="tipoTel.invalid && (tipoTel.dirty || tipoTel.touched)" style="color: rgb(194, 94, 94);">
-                        <div *ngIf="tipoTel.errors?.['required']">El tipo de identificación es requerido</div>
+                        <div *ngIf="tipoTel.errors?.['required']">El tipo de telefono es requerido</div>
                       </div>
                 </div>
             </div>
@@ -86,7 +91,7 @@
                 </div>
               </div>
             </div>
-            
+
             <div class="form-group row mb-3">
               <label for="departamento" class="col-form-label col-sm-2" required>Departamento <span class="text-danger">*</span></label>
               <div class="col-sm-6">
