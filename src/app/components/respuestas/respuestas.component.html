@@ -1,0 +1,37 @@
+<div class="custom-title mt-4"><h1>{{titulC}}</h1></div>
+
+<div class="card text-white mt-5 custom-card">
+      <div class="card-body">
+      <form #cuestionarioForm = "ngForm">
+        <div class="form-group row mb-3">
+          <label for="respuest" class="col-form-label col-sm-2" required>Respuesta <span class="text-danger">*</span></label>
+            <div class="col-sm-6">
+              <input type="text" class="form-control" name="respuest" [(ngModel)]="respuesta.descripcion" placeholder="Ingrese la respuesta"
+                required minlength="3" #respuest = 'ngModel'>
+                <div *ngIf="respuest.invalid && (respuest.dirty || respuest.touched)" style="color: rgb(194, 94, 94);">
+                    <div *ngIf="respuest.errors?.['required']">El título es requerido</div>
+                    <div *ngIf="respuest.errors?.['minlength']">El título debe tener al menos 3 caracteres</div>
+                  </div>
+            </div>
+          </div>
+         
+          <div class="form-group row mb-3">
+            <label for="tipoPregunta" class="col-form-label col-sm-2" required>Cuestionarios <span class="text-danger">*</span></label>
+              <div class="col-sm-6">
+                <select class="form-select" aria-label="Default select example"[(ngModel)]="opcionSeleccionada" (ngModelChange)="tipoPreguntaSeleccionada($event)" name="selectQuestion">
+                  <option *ngFor="let cuestionario of cuestionarios" [value]="cuestionario.titulo">
+                    {{ cuestionario.titulo }}
+                  </option>
+                </select>
+              </div>
+          </div>
+      </form>
+      <div class="form-group row mt-4">
+          <div class="col-sm-6">
+              <button class="btn btn-secondary custom-margin" role="button" >Atrás</button>
+              <button class="btn btn-success" role="button"  [disabled]="!cuestionarioForm.form.valid" (click) = 'registrarRespuesta()' >Crear</button>
+          </div>
+
+      </div>
+  </div>
+</div>

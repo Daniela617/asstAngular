@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class DocentesComponent implements OnInit{
   constructor(private objDocenteService:DocenteService,private router:Router) { }
   public docentes: Docente[] = [];
+  public titulo: string = "Administrar docentes";
   ngOnInit(): void {
     this.getDocentes();
   }
@@ -21,5 +22,8 @@ export class DocentesComponent implements OnInit{
   }
   crearDocente(){
     this.router.navigate(['docente/form']);
+  }
+  registrarRespuesta(docente:Docente){
+    this.router.navigate(['/respuestas',docente.idPersona]);
   }
 }

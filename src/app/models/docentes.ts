@@ -3,6 +3,7 @@ import { Telefono } from "./telefono";
 
 export class Docente
 {
+  idPersona!: number;
   tipoIdentificacion!: string;
   numeroIdentificacion!: number;
   nombres!: string;

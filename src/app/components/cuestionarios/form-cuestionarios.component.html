@@ -1,5 +1,5 @@
 <div class="custom-title mt-4"><h1>{{titulC}}</h1></div>
-<ul class="alert alert-danger" *ngIf="errores.length > 0">
+<ul class="alert alert-danger mt-4 custom-alert" *ngIf="errores.length > 0">
   <li *ngFor="let err of errores">
     {{ err }}
   </li>
@@ -43,15 +43,13 @@
           <div class="form-group row mb-3">
             <label for="tipoPregunta" class="col-form-label col-sm-2" required>Tipo Pregunta <span class="text-danger">*</span></label>
               <div class="col-sm-6">
-                <select [(ngModel)]="opcionSleccionada" (ngModelChange)="tipoPreguntaSeleccionada($event)" name="selectQuestion">
+                <select class="form-select" aria-label="Default select example"[(ngModel)]="opcionSleccionada" (ngModelChange)="tipoPreguntaSeleccionada($event)" name="selectQuestion">
                   <option *ngFor="let item of tpPregunta" [value]="item.nombre">
                     {{ item.nombre }}
                   </option>
                 </select>
-
               </div>
           </div>
-
       </form>
       <div class="form-group row mt-4">
           <div class="col-sm-6">
