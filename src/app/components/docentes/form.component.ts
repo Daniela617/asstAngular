@@ -19,6 +19,7 @@ export class FormComponent implements OnInit {
   public departamentoSeleccionados: Departamento[] = [];
   public titulo: string = 'Crear docente';
   public errores: string[] = [];
+  public deptoSeleccionado = false;
   ngOnInit(): void {
     this.getDepartamentos();
   }
@@ -34,6 +35,7 @@ export class FormComponent implements OnInit {
       },
       err => {
         this.errores = err.error.errors as string[];
+this.errores = this.errores.map(error => error.replace(/El campo '[^‘]*‘/g, ''));
         console.error('Codigo del error desde el backend'+ err.status);
         console.error(err.error.errors);
       }
@@ -46,11 +48,16 @@ export class FormComponent implements OnInit {
     } else {
       this.departamentoSeleccionados.splice(index, 1);
     }
+    // Actualiza deptoSeleccionado basado en si alguna opción ha sido seleccionada
+    this.deptoSeleccionado = this.departamentoSeleccionados.length > 0;
   }
   public getDepartamentos():void{
     this.objService.getDepartamentos().subscribe(
       departamentos => this.departamentos = departamentos
     );
+  }
+  irAtras(){
+    this.router.navigate(['/docentes']);
   }
 
 }

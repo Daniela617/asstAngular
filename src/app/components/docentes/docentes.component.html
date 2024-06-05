@@ -1,11 +1,11 @@
-<div class="card text-white bg-secondary mb-3 mt-4" style="max-width: 500rem;">
-    <div class="card-header">Docentes</div>
+<div class="custom-title mt-4"><h1>{{titulo}}</h1></div>
+<div class="card text-white mb-3 mt-4 custom-card" style="max-width: 500rem; ">
     <div class="card-body">
         <h5 class="card-title">Listado de docentes</h5>
         <div class="my-2 text-left">
-                <button class="btn btn-rounded btn-primary" type="button" (click)='crearDocente()' >
-                Crear Cliente
-                </button>
+            <button class="btn btn-rounded btn-primary" type="button" (click)='crearDocente()' >
+                Crear 
+            </button>
         </div>
         <div *ngIf="docentes.length==0" class="alert alert-info">
             No se encuentran registros en la base de datos
@@ -14,18 +14,31 @@
             <table class="table table-bordered table-striped" style="max-width: 100%;" *ngIf="docentes.length > 0">
                 <thead>
                     <tr>
+                        <th>Id</th>
                         <th>Nombres</th>
                         <th>Apellidos</th>
                         <th>Correo</th>
                         <th>Vinculacion</th>
+                        <th>Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr *ngFor="let docente of docentes">
+                        <td>{{docente.idPersona}}</td>
                         <td>{{docente.nombres}}</td>
                         <td>{{docente.apellidos}}</td>
                         <td>{{docente.correo}}</td>
                         <td>{{docente.vinculacion}}</td>
+                        <td>
+                            <div class="d-flex justify-content-around">
+                              <button class="btn btn-sm btn-primary" title="Ver detalles" >
+                                <i class="bi bi-eye"></i>
+                              </button>
+                              <button class="btn btn-sm btn-warning" title="Editar docente" (click)="registrarRespuesta(docente)" >
+                                <i class="bi bi-pencil"></i>
+                              </button>
+                            </div>
+                          </td>
                     </tr>
                 </tbody>
             </table>

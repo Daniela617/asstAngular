@@ -16,4 +16,5 @@ export class HeaderComponent {
   irDocente(){
     this.router.navigate(['/docentes']);
   }
+
 }

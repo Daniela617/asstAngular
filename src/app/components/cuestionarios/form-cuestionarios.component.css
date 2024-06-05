@@ -9,4 +9,9 @@
   .custom-margin {
     margin-right: 9px; /* Ajusta el valor según sea necesario */
   }
+  .custom-alert {
+    list-style-type: none; /* quita los bullets de la lista */
+    padding: 20px; /* agrega padding */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* agrega sombra */
+  }
  

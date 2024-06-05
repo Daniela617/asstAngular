@@ -1,5 +1,5 @@
 <div class="custom-title mt-4"><h1>{{titulo}}</h1></div>
-<ul class="alert alert-danger" *ngIf="errores.length > 0">
+<ul class="alert alert-danger mt-4 custom-alert" *ngIf="errores.length > 0">
   <li *ngFor="let err of errores">
     {{ err }}
   </li>
@@ -95,21 +95,24 @@
             <div class="form-group row mb-3">
               <label for="departamento" class="col-form-label col-sm-2" required>Departamento <span class="text-danger">*</span></label>
               <div class="col-sm-6">
-                  <label class="form-check-label" for="flexCheckDefault">
-                    <div *ngFor="let depto of departamentos" class="form-check">
-                      <input class="form-check-input" type="checkbox" (change)="updateSelection(depto)" id="{{depto.idDepartamento}}">
-                      <label class="form-check-label" for="{{depto.idDepartamento}}">
-                        {{depto.nombre}}
-                      </label>
-                    </div>
-                  </label>
+                <label class="form-check-label" for="flexCheckDefault">
+                  <div *ngFor="let depto of departamentos" class="form-check">
+                    <input class="form-check-input" type="checkbox" (change)="updateSelection(depto)" id="{{depto.idDepartamento}}">
+                    <label class="form-check-label" for="{{depto.idDepartamento}}">
+                      {{depto.nombre}}
+                    </label>
+                  </div>
+                </label>
+                <div *ngIf="!deptoSeleccionado" style="color: rgb(194, 94, 94);">
+                  Al menos un departamento debe ser seleccionado
+                </div>
               </div>
             </div>
 
       </form>
       <div class="form-group row mt-4">
           <div class="col-sm-6">
-
+            <button class="btn btn-secondary custom-margin" role="button" (click)='irAtras()'>Atrás</button>
               <button class="btn btn-success" role="button" (click)='crearDocente()' [disabled]="!docenteForm.form.valid">Crear</button>
           </div>
 

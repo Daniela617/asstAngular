@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { CuestionariosComponent } from './components/cuestionarios/cuestionarios.component';
 import { FormCuestionariosComponent } from './components/cuestionarios/form-cuestionarios.component';
 import { CuestionarioService } from './components/cuestionarios/cuestionario.service';
+import { RespuestasComponent } from './components/respuestas/respuestas.component';
+import { RespuestaService } from './components/respuestas/respuesta.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +24,8 @@ import { CuestionarioService } from './components/cuestionarios/cuestionario.ser
     FooterComponent,
     HeaderComponent,
     CuestionariosComponent,
-    FormCuestionariosComponent
+    FormCuestionariosComponent,
+    RespuestasComponent
   ],
   imports: [
     BrowserModule,
@@ -30,7 +33,7 @@ import { CuestionarioService } from './components/cuestionarios/cuestionario.ser
     HttpClientModule,
     FormsModule
   ],
-  providers: [DocenteService,CuestionarioService],
+  providers: [DocenteService,CuestionarioService,RespuestaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

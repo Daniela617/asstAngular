@@ -18,6 +18,7 @@ export class FormCuestionariosComponent {
   public preguntaList : Pregunta[] = [];
   public tpPregunta: TipoPregunta[] = [];
   public tpPreguntaSeleccionada: TipoPregunta= new TipoPregunta();
+  
   public titulC: string = 'Crear cuestionario';
   public errores: string[] = [];
   ngOnInit(): void {
