@@ -5,13 +5,15 @@ import { FormCuestionariosComponent } from './components/cuestionarios/form-cues
 import { CuestionariosComponent } from './components/cuestionarios/cuestionarios.component';
 import { DocentesComponent } from './components/docentes/docentes.component';
 import { RespuestasComponent } from './components/respuestas/respuestas.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 const routes: Routes = [
   {path: 'docente/form', component: FormComponent},
   {path: 'docentes', component: DocentesComponent},
   {path: 'cuestionario/form', component: FormCuestionariosComponent},
   {path: 'cuestionarios', component: CuestionariosComponent},
-  {path: 'respuestas/:id', component: RespuestasComponent}
+  {path: 'respuestas/:id', component: RespuestasComponent},
+  {path: 'modal', component: ModalComponent}
 ];
 
 @NgModule({

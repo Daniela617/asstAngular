@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Docente } from '../../models/docentes';
 import { DocenteService } from './docente.service';
 import { Router } from '@angular/router';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ModalComponent } from '../modal/modal.component';
 
 @Component({
   selector: 'app-docentes',
@@ -9,7 +11,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./docentes.component.css']
 })
 export class DocentesComponent implements OnInit{
-  constructor(private objDocenteService:DocenteService,private router:Router) { }
+  constructor(private modalService: NgbModal,private objDocenteService:DocenteService,private router:Router) { }
   public docentes: Docente[] = [];
   public titulo: string = "Administrar docentes";
   ngOnInit(): void {
@@ -25,5 +27,8 @@ export class DocentesComponent implements OnInit{
   }
   registrarRespuesta(docente:Docente){
     this.router.navigate(['/respuestas',docente.idPersona]);
+  }
+  verInfo(){
+    this.modalService.open(ModalComponent);
   }
 }

@@ -10,6 +10,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { DocentesComponent } from './components/docentes/docentes.component';
 import { HeaderComponent} from './components/header/header.component';
 import { HttpClientModule } from '@angular/common/http';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CuestionariosComponent } from './components/cuestionarios/cuestionarios.component';
 import { FormCuestionariosComponent } from './components/cuestionarios/form-cuestionarios.component';
 import { CuestionarioService } from './components/cuestionarios/cuestionario.service';
@@ -31,6 +32,7 @@ import { RespuestaService } from './components/respuestas/respuesta.service';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    NgbModule,
     FormsModule
   ],
   providers: [DocenteService,CuestionarioService,RespuestaService],
