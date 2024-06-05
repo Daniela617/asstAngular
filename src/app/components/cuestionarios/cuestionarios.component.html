@@ -14,6 +14,7 @@
           <table class="table table-bordered table-striped" style="max-width: 100%;" *ngIf="cuestionarios.length > 0">
             <thead>
               <tr>
+                <th>Id</th>
                 <th>Título</th>
                 <th>Descripción</th>
                 <th>Preguntas</th>
@@ -21,6 +22,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let cuestionario of cuestionarios">
+                <td>{{ cuestionario.idCuestionario }}</td>
                 <td>{{ cuestionario.titulo }}</td>
                 <td>{{ cuestionario.descripcion }}</td>
                 <td>

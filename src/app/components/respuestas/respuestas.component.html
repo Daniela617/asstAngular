@@ -1,4 +1,4 @@
-<div class="custom-title mt-4"><h1>{{titulC}}</h1></div>
+<div class="custom-title mt-4"><h1>{{tituloC}}</h1></div>
 
 <div class="card text-white mt-5 custom-card">
       <div class="card-body">
@@ -16,19 +16,19 @@
           </div>
          
           <div class="form-group row mb-3">
-            <label for="tipoPregunta" class="col-form-label col-sm-2" required>Cuestionarios <span class="text-danger">*</span></label>
-              <div class="col-sm-6">
-                <select class="form-select" aria-label="Default select example"[(ngModel)]="opcionSeleccionada" (ngModelChange)="tipoPreguntaSeleccionada($event)" name="selectQuestion">
-                  <option *ngFor="let cuestionario of cuestionarios" [value]="cuestionario.titulo">
-                    {{ cuestionario.titulo }}
-                  </option>
-                </select>
-              </div>
+            <label for="cuestionarioS" class="col-form-label col-sm-2" required>Cuestionarios <span class="text-danger">*</span></label>
+            <div class="col-sm-6">
+              <select class="form-select" aria-label="Default select example" [(ngModel)]="opcionSeleccionada" (ngModelChange)="tipoPreguntaSeleccionada($event)" name="selectQuestion">
+                <option *ngFor="let cuestionario of cuestionarios" [value]="cuestionario.titulo">
+                  {{ cuestionario.titulo }}
+                </option>
+              </select>
+            </div>
           </div>
       </form>
       <div class="form-group row mt-4">
           <div class="col-sm-6">
-              <button class="btn btn-secondary custom-margin" role="button" >Atrás</button>
+              <button class="btn btn-secondary custom-margin" role="button" (click) = 'irAtras()' >Atrás</button>
               <button class="btn btn-success" role="button"  [disabled]="!cuestionarioForm.form.valid" (click) = 'registrarRespuesta()' >Crear</button>
           </div>
 
