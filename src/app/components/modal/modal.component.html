@@ -1,10 +1,26 @@
 <div class="modal-header">
-  <h5 class="modal-title">Modal</h5>
+  <h5 class="modal-title">Detalles del Docente</h5>
   <button type="button" class="btn-close" aria-label="Close" (click)="close()"></button>
 </div>
-<div class="modal-body">
-  Hola Mundo
+<div class="modal-body" *ngIf="respuesta">
+  <h5>Docente</h5>
+  <p><strong>Tipo de Identificación:</strong> {{ respuesta.objDocente.tipoIdentificacion }}</p>
+  <p><strong>Número de Identificación:</strong> {{ respuesta.objDocente.numeroIdentificacion }}</p>
+  <p><strong>Nombres:</strong> {{ respuesta.objDocente.nombres }}</p>
+  <p><strong>Apellidos:</strong> {{ respuesta.objDocente.apellidos }}</p>
+  <p><strong>Correo:</strong> {{ respuesta.objDocente.correo }}</p>
+  <p><strong>Vinculación:</strong> {{ respuesta.objDocente.vinculacion }}</p>
+
+  <h5>Respuestas</h5>
+  <div *ngFor="let resp of respuesta.objRespuesta">
+    <p><strong>Descripción:</strong> {{ resp.descripcion }}</p>
+    <p><strong>Enunciado:</strong> {{ resp.objPreguntaEntity.enunciado }}</p>
+    <p><strong>Tipo de Pregunta:</strong> {{ resp.objPreguntaEntity.objTipoPreguntaEntity.nombre }}</p>
+    <p><strong>Descripción de la Pregunta:</strong> {{ resp.objPreguntaEntity.objTipoPreguntaEntity.descripcion }}</p>
+    <p><strong>Cuestionario:</strong> {{ resp.objPreguntaEntity.objCuestionario.titulo }}</p>
+    <p><strong>Descripción del Cuestionario:</strong> {{ resp.objPreguntaEntity.objCuestionario.descripcion }}</p>
+  </div>
 </div>
 <div class="modal-footer">
-  <button type="button" class="btn btn-secondary" (click)="close()">Close</button>
+  <button type="button" class="btn btn-secondary" (click)="close()">Cerrar</button>
 </div>

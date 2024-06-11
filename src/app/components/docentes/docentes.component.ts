@@ -28,7 +28,9 @@ export class DocentesComponent implements OnInit{
   registrarRespuesta(docente:Docente){
     this.router.navigate(['/respuestas',docente.idPersona]);
   }
-  verInfo(){
-    this.modalService.open(ModalComponent);
+  verInfo(id:number){
+    const modalRef = this.modalService.open(ModalComponent);
+    modalRef.componentInstance.docenteId = id
   }
+
 }
